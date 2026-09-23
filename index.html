@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Solaris Riding Club — Horses, sun & open fields · Moldova</title>
+<meta name="description" content="A relaxed family horse riding club near Comrat, Moldova. Lessons, pony rides and photo sessions for children and adults. By appointment on weekends & holidays." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --cream:#FAF6EA;
+  --cream-2:#F1EAD6;
+  --paper:#FFFDF6;
+  --ink:#2E2517;
+  --ink-soft:#5B4F3B;
+  --muted:#8C7C62;
+  --green:#5E7B34;
+  --green-700:#48611F;
+  --gold:#E0A11E;
+  --gold-700:#B67F12;
+  --terra:#B26A3A;
+  --dark:#2A2114;
+  --dark-2:#372C1B;
+  --line:rgba(46,37,23,.13);
+  --line-soft:rgba(46,37,23,.08);
+  --sidebar-w:270px;
+  --radius:20px;
+  --shadow:0 18px 50px -20px rgba(46,37,23,.35);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:80px;}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink-soft);
+  font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3,h4{font-family:"Fraunces","Georgia",serif;color:var(--ink);line-height:1.04;font-weight:600;margin:0;letter-spacing:-.01em;}
+
+.eyebrow{
+  font-family:"Inter",sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-size:12.5px;
+  font-weight:600;
+  color:var(--green);
+  margin:0 0 22px;
+}
+.accent{color:var(--gold-700);}
+.serif-em{font-style:italic;}
+
+/* ============ LAYOUT ============ */
+.layout{display:flex;min-height:100dvh;}
+.main{flex:1;min-width:0;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,64px);}
+section{padding:clamp(64px,9vw,120px) 0;}
+
+/* ============ SIDEBAR ============ */
+.sidebar{
+  width:var(--sidebar-w);
+  flex-shrink:0;
+  position:sticky;
+  top:0;
+  height:100dvh;
+  background:var(--cream);
+  border-right:1px solid var(--line);
+  display:flex;
+  flex-direction:column;
+  padding:34px 30px;
+  z-index:60;
+}
+.brand{display:flex;align-items:center;gap:13px;}
+.brand__mark{width:46px;height:46px;flex-shrink:0;}
+.brand__name{font-family:"Fraunces",serif;font-weight:700;color:var(--ink);font-size:19px;line-height:1.02;letter-spacing:-.01em;}
+.brand__name small{display:block;font-family:"Inter",sans-serif;font-weight:600;font-size:9.5px;letter-spacing:.22em;color:var(--green);text-transform:uppercase;margin-top:4px;}
+.brand__tag{margin-top:16px;font-size:12.5px;color:var(--muted);font-style:italic;font-family:"Fraunces",serif;line-height:1.35;}
+
+.nav{margin-top:44px;display:flex;flex-direction:column;gap:2px;}
+.nav a{
+  font-weight:500;font-size:16px;color:var(--ink);
+  padding:9px 0;position:relative;width:fit-content;
+  transition:color .25s var(--ease);
+}
+.nav a::after{
+  content:"";position:absolute;left:0;bottom:6px;width:0;height:2px;
+  background:var(--gold);transition:width .3s var(--ease);
+}
+.nav a:hover{color:var(--green-700);}
+.nav a:hover::after,.nav a.active::after{width:100%;}
+.nav a.active{color:var(--green-700);}
+
+.sidebar__foot{margin-top:auto;padding-top:28px;}
+.lang{
+  display:inline-flex;background:var(--cream-2);border-radius:999px;padding:4px;
+  border:1px solid var(--line-soft);
+}
+.lang button{
+  border:0;background:transparent;font-family:inherit;font-weight:600;font-size:13px;
+  color:var(--muted);padding:7px 15px;border-radius:999px;cursor:pointer;
+  transition:all .25s var(--ease);letter-spacing:.03em;
+}
+.lang button.on{background:var(--ink);color:var(--cream);}
+
+/* ============ TOPBAR (mobile) ============ */
+.topbar{
+  display:none;position:sticky;top:0;z-index:70;
+  background:rgba(250,246,234,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  padding:14px 20px;align-items:center;justify-content:space-between;gap:14px;
+}
+.topbar .brand__name{font-size:16px;}
+.topbar .brand__mark{width:38px;height:38px;}
+.topbar__right{display:flex;align-items:center;gap:12px;}
+.burger{
+  width:44px;height:44px;border:1px solid var(--line);background:var(--paper);
+  border-radius:12px;display:grid;place-items:center;cursor:pointer;
+}
+.burger span,.burger span::before,.burger span::after{
+  content:"";display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:.3s var(--ease);
+}
+.burger span::before{transform:translateY(-6px);}
+.burger span::after{transform:translateY(4px);}
+body.nav-open .burger span{background:transparent;}
+body.nav-open .burger span::before{transform:rotate(45deg);}
+body.nav-open .burger span::after{transform:rotate(-45deg) translateY(-1px);}
+
+.mobile-nav{
+  display:none;position:fixed;inset:0;z-index:65;
+  background:var(--cream);padding:88px 28px 40px;
+  flex-direction:column;gap:6px;
+  transform:translateY(-8px);opacity:0;pointer-events:none;transition:.3s var(--ease);
+}
+body.nav-open .mobile-nav{opacity:1;transform:none;pointer-events:auto;}
+.mobile-nav a{font-family:"Fraunces",serif;font-size:27px;color:var(--ink);padding:9px 0;border-bottom:1px solid var(--line-soft);}
+
+/* ============ HERO ============ */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;min-height:calc(100dvh - 0px);align-items:stretch;padding:0;}
+.hero__text{padding:clamp(48px,7vw,96px) clamp(24px,5vw,80px);display:flex;flex-direction:column;justify-content:center;}
+.hero h1{font-size:clamp(44px,6.6vw,92px);font-weight:600;margin:0 0 26px;max-width:12ch;}
+.hero__sub{font-size:clamp(16px,1.4vw,19px);max-width:44ch;color:var(--ink-soft);margin:0 0 38px;}
+.hero__cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+.hero__media{position:relative;overflow:hidden;background:var(--cream-2);}
+.hero__media img{width:100%;height:100%;object-fit:cover;}
+.hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(46,37,23,.14),transparent 40%);}
+
+.btn{
+  display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15.5px;
+  padding:16px 28px;border-radius:999px;cursor:pointer;border:0;font-family:inherit;
+  transition:transform .25s var(--ease),background .25s var(--ease),box-shadow .25s var(--ease);
+}
+.btn svg{width:17px;height:17px;}
+.btn--primary{background:var(--gold);color:var(--dark);box-shadow:0 10px 24px -10px rgba(224,161,30,.8);}
+.btn--primary:hover{background:var(--gold-700);color:#fff;transform:translateY(-2px);}
+.btn--dark{background:var(--ink);color:var(--cream);}
+.btn--dark:hover{background:var(--green-700);transform:translateY(-2px);}
+.btn--ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line);}
+.btn--ghost:hover{border-color:var(--green);color:var(--green-700);}
+.link-arrow{font-weight:600;color:var(--ink);display:inline-flex;align-items:center;gap:7px;transition:gap .25s var(--ease),color .25s;}
+.link-arrow:hover{gap:12px;color:var(--green-700);}
+.link-arrow svg{width:15px;height:15px;}
+
+/* info strip under hero */
+.strip{background:var(--dark);color:var(--cream);}
+.strip__grid{display:grid;grid-template-columns:repeat(4,1fr);}
+.strip__item{padding:26px clamp(20px,3vw,40px);border-right:1px solid rgba(255,255,255,.1);}
+.strip__item:last-child{border-right:0;}
+.strip__k{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:7px;}
+.strip__v{font-family:"Fraunces",serif;font-size:19px;color:#fff;font-weight:500;}
+
+/* ============ ABOUT ============ */
+.about__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,90px);align-items:start;}
+.about__left h2{font-size:clamp(34px,4vw,54px);margin-bottom:28px;}
+.about__portrait{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/4.3;}
+.about__portrait img{width:100%;height:100%;object-fit:cover;}
+.about__right p{margin:0 0 20px;font-size:17px;}
+.pullquote{
+  margin-top:32px;padding-top:26px;border-top:1px solid var(--line);
+  font-family:"Fraunces",serif;font-style:italic;font-size:20px;color:var(--ink);line-height:1.4;
+}
+
+/* ============ HERD ============ */
+.section-head{max-width:640px;margin-bottom:52px;}
+.section-head h2{font-size:clamp(32px,4vw,50px);}
+.section-head p{margin:18px 0 0;color:var(--ink-soft);}
+.herd__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+.herd__card{background:var(--paper);border:1px solid var(--line-soft);border-radius:var(--radius);overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s var(--ease);}
+.herd__card:hover{transform:translateY(-5px);box-shadow:var(--shadow);}
+.herd__card .ph{aspect-ratio:1/1;overflow:hidden;}
+.herd__card img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease);}
+.herd__card:hover img{transform:scale(1.05);}
+.herd__body{padding:22px 24px 26px;}
+.herd__body h3{font-size:23px;margin-bottom:5px;}
+.herd__role{font-size:13.5px;color:var(--green-700);font-weight:600;letter-spacing:.02em;}
+.herd__note{margin-top:26px;font-style:italic;font-family:"Fraunces",serif;color:var(--muted);font-size:16px;}
+
+/* ============ EXPERIENCES ============ */
+.exp-band{background:var(--cream-2);}
+.exp__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;}
+.exp__card{background:var(--paper);border-radius:var(--radius);overflow:hidden;border:1px solid var(--line-soft);display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease);}
+.exp__card:hover{transform:translateY(-5px);box-shadow:var(--shadow);}
+.exp__ph{aspect-ratio:16/10;overflow:hidden;position:relative;}
+.exp__ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease);}
+.exp__card:hover .exp__ph img{transform:scale(1.05);}
+.exp__num{position:absolute;top:16px;left:18px;background:var(--gold);color:var(--dark);font-weight:700;font-size:13px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-family:"Fraunces",serif;}
+.exp__body{padding:26px 28px 30px;}
+.exp__body h3{font-size:24px;margin-bottom:10px;}
+.exp__body p{margin:0;font-size:15.5px;color:var(--ink-soft);}
+
+/* ============ PRICES ============ */
+.price__row{
+  display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;
+  padding:26px 4px;border-top:1px solid var(--line);
+}
+.price__row:last-of-type{border-bottom:1px solid var(--line);}
+.price__name{font-family:"Fraunces",serif;font-size:clamp(20px,2.4vw,27px);color:var(--ink);font-weight:500;}
+.price__meta{font-family:"Inter",sans-serif;font-size:13.5px;color:var(--muted);font-weight:500;display:block;margin-top:3px;letter-spacing:.01em;}
+.price__val{font-family:"Fraunces",serif;font-size:clamp(20px,2.4vw,27px);color:var(--green-700);font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums;}
+.price__foot{margin-top:30px;display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;justify-content:space-between;}
+.price__who{font-size:15px;color:var(--ink-soft);}
+.price__who b{color:var(--ink);font-weight:600;}
+
+/* ============ GALLERY ============ */
+.gallery{columns:3;column-gap:16px;}
+.gallery a{display:block;margin:0 0 16px;border-radius:14px;overflow:hidden;break-inside:avoid;cursor:zoom-in;position:relative;background:var(--cream-2);}
+.gallery img{width:100%;transition:transform .6s var(--ease),filter .4s var(--ease);}
+.gallery a:hover img{transform:scale(1.04);filter:brightness(.95);}
+
+/* ============ VISITING ============ */
+.visit-band{background:var(--green);color:#F4F1E4;}
+.visit-band .eyebrow{color:#DCE8B8;}
+.visit-band h2{color:#fff;font-size:clamp(32px,4vw,50px);}
+.visit__grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,80px);align-items:start;}
+.visit__list{list-style:none;margin:0;padding:0;}
+.visit__list li{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:20px 0;border-top:1px solid rgba(255,255,255,.18);align-items:baseline;}
+.visit__list li:first-child{border-top:0;}
+.visit__list .n{font-family:"Fraunces",serif;color:#EAD48A;font-weight:600;font-size:15px;}
+.visit__list .t{color:#F4F1E4;font-size:16.5px;}
+.visit__here{margin-top:8px;}
+.visit__here h3{color:#fff;font-size:26px;margin-bottom:16px;}
+.visit__here p{color:#EDE9D8;font-size:16px;margin:0 0 24px;}
+.btn--ondark{background:#fff;color:var(--green-700);}
+.btn--ondark:hover{background:var(--gold);color:var(--dark);transform:translateY(-2px);}
+
+/* ============ CONTACT ============ */
+.contact{background:var(--dark);color:var(--cream);position:relative;overflow:hidden;}
+.contact__mark{position:absolute;right:-4%;top:50%;transform:translateY(-50%);width:min(46%,520px);opacity:.05;pointer-events:none;}
+.contact .eyebrow{color:var(--gold);}
+.contact h2{color:#fff;font-size:clamp(38px,5.5vw,74px);max-width:14ch;margin-bottom:44px;}
+.contact__grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;position:relative;z-index:1;}
+.c-k{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:12px;}
+.c-phone{font-family:"Fraunces",serif;font-size:clamp(30px,4vw,46px);color:#fff;font-weight:600;letter-spacing:.01em;}
+.c-sub{color:#C9BFA8;margin:6px 0 26px;font-size:15px;}
+.contact__cta{display:flex;flex-wrap:wrap;gap:13px;}
+.c-block{margin-bottom:34px;}
+.c-block p{margin:0;color:#E7E0CE;font-size:16px;}
+.socials{display:flex;gap:12px;margin-top:14px;}
+.socials a{width:46px;height:46px;border:1px solid rgba(255,255,255,.2);border-radius:12px;display:grid;place-items:center;transition:.25s var(--ease);}
+.socials a:hover{background:var(--gold);border-color:var(--gold);transform:translateY(-3px);}
+.socials a:hover svg{fill:var(--dark);}
+.socials svg{width:20px;height:20px;fill:var(--cream);transition:fill .25s;}
+.contact__foot{margin-top:56px;padding-top:26px;border-top:1px solid rgba(255,255,255,.13);display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-size:13px;color:#A89C82;position:relative;z-index:1;}
+
+/* ============ LIGHTBOX ============ */
+.lightbox{position:fixed;inset:0;z-index:200;background:rgba(28,22,13,.94);display:none;align-items:center;justify-content:center;padding:32px;}
+.lightbox.on{display:flex;}
+.lightbox img{max-width:92vw;max-height:88vh;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.6);}
+.lightbox__close{position:absolute;top:22px;right:26px;width:48px;height:48px;border:1px solid rgba(255,255,255,.3);background:transparent;border-radius:50%;color:#fff;font-size:24px;cursor:pointer;display:grid;place-items:center;}
+.lightbox__nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border:1px solid rgba(255,255,255,.3);background:rgba(0,0,0,.2);border-radius:50%;color:#fff;font-size:24px;cursor:pointer;display:grid;place-items:center;}
+.lightbox__nav.prev{left:20px;} .lightbox__nav.next{right:20px;}
+
+/* ============ REVEAL ============ */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+.reveal.in{opacity:1;transform:none;}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1080px){
+  .hero{grid-template-columns:1fr;min-height:auto;}
+  .hero__media{min-height:56vh;order:-1;}
+}
+@media(max-width:900px){
+  .sidebar{display:none;}
+  .topbar{display:flex;}
+  .mobile-nav{display:flex;}
+  .about__grid,.visit__grid,.contact__grid{grid-template-columns:1fr;gap:40px;}
+  .exp__grid{grid-template-columns:1fr;}
+  .herd__grid{grid-template-columns:1fr;max-width:440px;}
+  .gallery{columns:2;}
+  .strip__grid{grid-template-columns:1fr 1fr;}
+  .strip__item:nth-child(2){border-right:0;}
+  .strip__item{border-bottom:1px solid rgba(255,255,255,.1);}
+}
+@media(max-width:560px){
+  body{font-size:16px;}
+  .hero__text{padding:44px 22px 52px;}
+  .strip__grid{grid-template-columns:1fr;}
+  .strip__item{border-right:0;}
+  .gallery{columns:1;}
+  .price__row{grid-template-columns:1fr;gap:6px;}
+  .price__val{font-size:22px;}
+  .contact h2{font-size:38px;}
+}
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important;}
+  .reveal{opacity:1!important;transform:none!important;transition:none!important;}
+  .btn,.herd__card,.exp__card,.gallery img{transition:none!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ MOBILE TOPBAR ============ -->
+<header class="topbar">
+  <a href="#home" class="brand">
+    <span class="brand__mark" aria-hidden="true">
+      <!-- LOGO PLACEHOLDER: replace this <svg> with the future Solaris logo -->
+      <svg viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="23" cy="23" r="9" fill="#E0A11E"/><g stroke="#5E7B34" stroke-width="2.4" stroke-linecap="round"><line x1="23" y1="3" x2="23" y2="9"/><line x1="23" y1="37" x2="23" y2="43"/><line x1="3" y1="23" x2="9" y2="23"/><line x1="37" y1="23" x2="43" y2="23"/><line x1="9" y1="9" x2="13" y2="13"/><line x1="33" y1="33" x2="37" y2="37"/><line x1="37" y1="9" x2="33" y2="13"/><line x1="13" y1="33" x2="9" y2="37"/></g></svg>
+    </span>
+    <span class="brand__name">Solaris<small>Riding Club</small></span>
+  </a>
+  <div class="topbar__right">
+    <div class="lang" role="group" aria-label="Language">
+      <button data-lang="en" class="on">EN</button>
+      <button data-lang="ru">RU</button>
+    </div>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<nav class="mobile-nav" aria-label="Mobile">
+  <a href="#home" data-en="Home" data-ru="Главная">Home</a>
+  <a href="#about" data-en="About" data-ru="О нас">About</a>
+  <a href="#herd" data-en="The herd" data-ru="Лошади">The herd</a>
+  <a href="#experiences" data-en="Experiences" data-ru="Занятия">Experiences</a>
+  <a href="#prices" data-en="Prices" data-ru="Цены">Prices</a>
+  <a href="#gallery" data-en="Gallery" data-ru="Галерея">Gallery</a>
+  <a href="#visiting" data-en="Visiting" data-ru="Посещение">Visiting</a>
+  <a href="#contact" data-en="Contact" data-ru="Контакты">Contact</a>
+</nav>
+
+<div class="layout">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar">
+    <a href="#home" class="brand">
+      <span class="brand__mark" aria-hidden="true">
+        <!-- LOGO PLACEHOLDER: replace this <svg> with the future Solaris logo -->
+        <svg viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="23" cy="23" r="9" fill="#E0A11E"/><g stroke="#5E7B34" stroke-width="2.4" stroke-linecap="round"><line x1="23" y1="3" x2="23" y2="9"/><line x1="23" y1="37" x2="23" y2="43"/><line x1="3" y1="23" x2="9" y2="23"/><line x1="37" y1="23" x2="43" y2="23"/><line x1="9" y1="9" x2="13" y2="13"/><line x1="33" y1="33" x2="37" y2="37"/><line x1="37" y1="9" x2="33" y2="13"/><line x1="13" y1="33" x2="9" y2="37"/></g></svg>
+      </span>
+      <span class="brand__name">Solaris<small>Riding Club</small></span>
+    </a>
+    <p class="brand__tag" data-en="Where strength and health unite." data-ru="Где сила и здоровье едины.">Where strength and health unite.</p>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="#home" class="active" data-en="Home" data-ru="Главная">Home</a>
+      <a href="#about" data-en="About" data-ru="О нас">About</a>
+      <a href="#herd" data-en="The herd" data-ru="Лошади">The herd</a>
+      <a href="#experiences" data-en="Experiences" data-ru="Занятия">Experiences</a>
+      <a href="#prices" data-en="Prices" data-ru="Цены">Prices</a>
+      <a href="#gallery" data-en="Gallery" data-ru="Галерея">Gallery</a>
+      <a href="#visiting" data-en="Visiting" data-ru="Посещение">Visiting</a>
+      <a href="#contact" data-en="Contact" data-ru="Контакты">Contact</a>
+    </nav>
+
+    <div class="sidebar__foot">
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang="en" class="on">EN</button>
+        <button data-lang="ru">RU</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <main class="main">
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero__text">
+        <p class="eyebrow" data-en="Horse Riding Club · Moldova" data-ru="Конный клуб · Молдова">Horse Riding Club · Moldova</p>
+        <h1 data-en='A day among horses, sun and <span class="accent">open fields.</span>' data-ru='День среди лошадей, солнца и <span class="accent">простора.</span>'>A day among horses, sun and <span class="accent">open fields.</span></h1>
+        <p class="hero__sub" data-en="A relaxed, family-run riding club near Comrat. Lessons, pony rides and photo sessions for children and adults — no competition, just time with these gentle, powerful animals." data-ru="Спокойный семейный конный клуб рядом с Комратом. Уроки, катание на пони и фотосессии для детей и взрослых — без соревнований, просто время рядом с этими добрыми и сильными животными.">A relaxed, family-run riding club near Comrat. Lessons, pony rides and photo sessions for children and adults — no competition, just time with these gentle, powerful animals.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="https://t.me/horses_moldova" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.8 16.6 9.6 20c.4 0 .6-.2.8-.4l1.9-1.8 3.9 2.9c.7.4 1.2.2 1.4-.7l2.6-12.1c.3-1.1-.4-1.6-1.1-1.3L3.4 9.9c-1.1.4-1 .9-.2 1.2l4.3 1.3L18 6.1c.5-.3.9-.1.6.2z"/></svg>
+            <span data-en="Book on Telegram" data-ru="Записаться в Telegram">Book on Telegram</span>
+          </a>
+          <a class="link-arrow" href="#prices">
+            <span data-en="See prices" data-ru="Смотреть цены">See prices</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero__media">
+        <img src="assets/img/hero.jpg" alt="A rider reaching up to greet a horse in golden evening light" fetchpriority="high" width="2200" height="1467">
+      </div>
+    </section>
+
+    <!-- INFO STRIP -->
+    <div class="strip">
+      <div class="strip__grid">
+        <div class="strip__item"><div class="strip__k" data-en="Visits" data-ru="Посещение">Visits</div><div class="strip__v" data-en="By appointment" data-ru="По записи">By appointment</div></div>
+        <div class="strip__item"><div class="strip__k" data-en="Open" data-ru="Открыто">Open</div><div class="strip__v" data-en="Weekends & holidays" data-ru="Выходные и праздники">Weekends &amp; holidays</div></div>
+        <div class="strip__item"><div class="strip__k" data-en="Location" data-ru="Локация">Location</div><div class="strip__v" data-en="Svetlîi, Comrat" data-ru="Светлый, Комрат">Svetlîi, Comrat</div></div>
+        <div class="strip__item"><div class="strip__k" data-en="Languages" data-ru="Языки">Languages</div><div class="strip__v">RU · EN · UK</div></div>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="wrap">
+        <div class="about__grid">
+          <div class="about__left reveal">
+            <p class="eyebrow" data-en="Our story" data-ru="Наша история">Our story</p>
+            <h2 data-en="Welcome to Solaris." data-ru="Добро пожаловать в Solaris.">Welcome to Solaris.</h2>
+            <div class="about__portrait">
+              <img src="assets/img/owner.jpg" alt="The founder of Solaris Riding Club standing with one of the horses" loading="lazy" width="1400" height="1544">
+            </div>
+          </div>
+          <div class="about__right reveal">
+            <p data-en="I've been around horses for about twenty years. I dreamed of them since I was a little girl, but only made that dream come true as an adult. In 2022 we moved to Moldova and brought our whole family with us — our dog Kora and my horse Francesca." data-ru="Я рядом с лошадьми уже около двадцати лет. Мечтала о них с детства, но осуществить мечту смогла только взрослой. В 2022 году мы переехали в Молдову и привезли с собой всю семью — нашу собаку Кору и мою лошадь Франческу.">I've been around horses for about twenty years. I dreamed of them since I was a little girl, but only made that dream come true as an adult. In 2022 we moved to Moldova and brought our whole family with us — our dog Kora and my horse Francesca.</p>
+            <p data-en="Horses are herd animals — they can't live alone. So to keep Francesca company we welcomed a pony, Malysh (Little One), and later an Orlov Trotter, Dobry (Kind One), joined us too." data-ru="Лошади — стадные животные, им нельзя жить в одиночестве. Чтобы Франческе было не скучно, у нас появился пони Малыш, а позже к нам присоединился орловский рысак Добрый.">Horses are herd animals — they can't live alone. So to keep Francesca company we welcomed a pony, Malysh (Little One), and later an Orlov Trotter, Dobry (Kind One), joined us too.</p>
+            <p data-en="My goal is simple: to give children and adults the chance to connect with these amazing animals. Time with horses is a proven way to lift your mood and improve both mental and physical health. Come and discover their world with us." data-ru="Моя цель проста: дать детям и взрослым возможность подружиться с этими удивительными животными. Время с лошадьми — проверенный способ поднять настроение и укрепить душевное и физическое здоровье. Приходите открыть их мир вместе с нами.">My goal is simple: to give children and adults the chance to connect with these amazing animals. Time with horses is a proven way to lift your mood and improve both mental and physical health. Come and discover their world with us.</p>
+            <p class="pullquote" data-en="“We're not a competitive club — our mission is relaxed, happy family time.”" data-ru="«Мы не спортивный клуб — наша задача спокойный и радостный семейный отдых.»">“We're not a competitive club — our mission is relaxed, happy family time.”</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HERD -->
+    <section id="herd" style="padding-top:0;">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-en="Meet the family" data-ru="Знакомьтесь">Meet the family</p>
+          <h2 data-en="The herd you'll spend the day with." data-ru="Табун, с которым вы проведёте день.">The herd you'll spend the day with.</h2>
+        </div>
+        <div class="herd__grid">
+          <article class="herd__card reveal">
+            <div class="ph"><img src="assets/img/horse-francesca.jpg" alt="Francesca the horse" loading="lazy"></div>
+            <div class="herd__body"><h3>Francesca</h3><span class="herd__role" data-en="Mare · the one who started it all" data-ru="Кобыла · с неё всё началось">Mare · the one who started it all</span></div>
+          </article>
+          <article class="herd__card reveal">
+            <div class="ph"><img src="assets/img/horse-malysh.jpg" alt="Malysh the pony" loading="lazy"></div>
+            <div class="herd__body"><h3>Malysh</h3><span class="herd__role" data-en="Pony · “Little One”" data-ru="Пони · «Малыш»">Pony · “Little One”</span></div>
+          </article>
+          <article class="herd__card reveal">
+            <div class="ph"><img src="assets/img/horse-dobry.jpg" alt="Dobry the Orlov Trotter" loading="lazy"></div>
+            <div class="herd__body"><h3>Dobry</h3><span class="herd__role" data-en="Orlov Trotter · “Kind One”" data-ru="Орловский рысак · «Добрый»">Orlov Trotter · “Kind One”</span></div>
+          </article>
+        </div>
+        <p class="herd__note reveal" data-en="…and Kora, our dog, who greets every visitor at the gate." data-ru="…и Кора, наша собака, встречает каждого гостя у ворот.">…and Kora, our dog, who greets every visitor at the gate.</p>
+      </div>
+    </section>
+
+    <!-- EXPERIENCES -->
+    <section id="experiences" class="exp-band">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-en="Experiences" data-ru="Занятия">Experiences</p>
+          <h2 data-en="Ways to spend time with the horses." data-ru="Как провести время с лошадьми.">Ways to spend time with the horses.</h2>
+          <p data-en="Everything is calm, supervised and matched to you — whether it's your first time in the saddle or you've ridden for years." data-ru="Всё спокойно, под присмотром и по вашему уровню — впервые в седле или уже с опытом.">Everything is calm, supervised and matched to you — whether it's your first time in the saddle or you've ridden for years.</p>
+        </div>
+        <div class="exp__grid">
+          <article class="exp__card reveal">
+            <div class="exp__ph"><span class="exp__num">01</span><img src="assets/img/exp-riding.jpg" alt="A rider on horseback in an open field" loading="lazy"></div>
+            <div class="exp__body"><h3 data-en="Horseback riding" data-ru="Верховая езда">Horseback riding</h3><p data-en="Guided rides in the saddle, always supervised and matched to each rider's age and comfort." data-ru="Уроки в седле — всегда под присмотром и с учётом возраста и уверенности каждого наездника.">Guided rides in the saddle, always supervised and matched to each rider's age and comfort.</p></div>
+          </article>
+          <article class="exp__card reveal">
+            <div class="exp__ph"><span class="exp__num">02</span><img src="assets/img/exp-pony.jpg" alt="Children riding a pony" loading="lazy"></div>
+            <div class="exp__body"><h3 data-en="Pony rides" data-ru="Катание на пони">Pony rides</h3><p data-en="A gentle introduction for younger and first-time riders, led at a calm, easy pace." data-ru="Мягкое знакомство для младших и начинающих — в спокойном, лёгком темпе.">A gentle introduction for younger and first-time riders, led at a calm, easy pace.</p></div>
+          </article>
+          <article class="exp__card reveal">
+            <div class="exp__ph"><span class="exp__num">03</span><img src="assets/img/exp-photo.jpg" alt="A guest hugging a horse during a photo session" loading="lazy"></div>
+            <div class="exp__body"><h3 data-en="Photo sessions" data-ru="Фотосессии">Photo sessions</h3><p data-en="Thirty minutes or more with a horse or pony, and warm keepsake photos to take home." data-ru="Полчаса и больше рядом с лошадью или пони — и тёплые фотографии на память.">Thirty minutes or more with a horse or pony, and warm keepsake photos to take home.</p></div>
+          </article>
+          <article class="exp__card reveal">
+            <div class="exp__ph"><span class="exp__num">04</span><img src="assets/img/exp-trip.jpg" alt="A child on a pony out in the countryside" loading="lazy"></div>
+            <div class="exp__body"><h3 data-en="Field trips" data-ru="Прогулки">Field trips</h3><p data-en="Ride out into the countryside and open fields around the village, at your own pace." data-ru="Выезд в поля и окрестности села — в своём собственном ритме.">Ride out into the countryside and open fields around the village, at your own pace.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICES -->
+    <section id="prices">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-en="Prices" data-ru="Цены">Prices</p>
+          <h2 data-en="Simple, honest pricing." data-ru="Простые и честные цены.">Simple, honest pricing.</h2>
+        </div>
+
+        <div class="reveal">
+          <div class="price__row">
+            <div><div class="price__name" data-en="Pony lesson or photo session" data-ru="Урок или фотосессия на пони">Pony lesson or photo session</div><span class="price__meta" data-en="30+ minutes" data-ru="30+ минут">30+ minutes</span></div>
+            <div class="price__val">400 <span data-en="lei" data-ru="лей">lei</span></div>
+          </div>
+          <div class="price__row">
+            <div><div class="price__name" data-en="Horse lesson or photo session" data-ru="Урок или фотосессия на лошади">Horse lesson or photo session</div><span class="price__meta" data-en="30+ minutes" data-ru="30+ минут">30+ minutes</span></div>
+            <div class="price__val">500 <span data-en="lei" data-ru="лей">lei</span></div>
+          </div>
+          <div class="price__row">
+            <div><div class="price__name" data-en="10-lesson package · pony" data-ru="Абонемент 10 занятий · пони">10-lesson package · pony</div><span class="price__meta" data-en="Best value for regular riders" data-ru="Выгодно для постоянных занятий">Best value for regular riders</span></div>
+            <div class="price__val">3 000 <span data-en="lei" data-ru="лей">lei</span></div>
+          </div>
+          <div class="price__row">
+            <div><div class="price__name" data-en="10-lesson package · horse" data-ru="Абонемент 10 занятий · лошадь">10-lesson package · horse</div><span class="price__meta" data-en="Best value for regular riders" data-ru="Выгодно для постоянных занятий">Best value for regular riders</span></div>
+            <div class="price__val">4 000 <span data-en="lei" data-ru="лей">lei</span></div>
+          </div>
+          <div class="price__row">
+            <div><div class="price__name" data-en="Field trip" data-ru="Выездная прогулка">Field trip</div><span class="price__meta" data-en="Per trip, depending on route" data-ru="За поездку, в зависимости от маршрута">Per trip, depending on route</span></div>
+            <div class="price__val">1 000–2 000 <span data-en="lei" data-ru="лей">lei</span></div>
+          </div>
+
+          <div class="price__foot">
+            <p class="price__who" data-en="Riders from <b>10 years old</b> · any experience welcome · weight up to <b>95 kg</b>." data-ru="Наездники <b>от 10 лет</b> · любой опыт · вес до <b>95 кг</b>.">Riders from <b>10 years old</b> · any experience welcome · weight up to <b>95 kg</b>.</p>
+            <a class="btn btn--dark" href="https://t.me/horses_moldova" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.8 16.6 9.6 20c.4 0 .6-.2.8-.4l1.9-1.8 3.9 2.9c.7.4 1.2.2 1.4-.7l2.6-12.1c.3-1.1-.4-1.6-1.1-1.3L3.4 9.9c-1.1.4-1 .9-.2 1.2l4.3 1.3L18 6.1c.5-.3.9-.1.6.2z"/></svg>
+              <span data-en="Book on Telegram" data-ru="Записаться в Telegram">Book on Telegram</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="exp-band" style="padding-top:clamp(56px,7vw,90px);">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-en="Gallery" data-ru="Галерея">Gallery</p>
+          <h2 data-en="Moments from the club." data-ru="Моменты из клуба.">Moments from the club.</h2>
+        </div>
+        <div class="gallery reveal" id="gallery-grid">
+          <a href="assets/img/g1.jpg"><img src="assets/img/g1.jpg" alt="Rider with horses in golden light" loading="lazy"></a>
+          <a href="assets/img/g8.jpg"><img src="assets/img/g8.jpg" alt="Grey horse portrait" loading="lazy"></a>
+          <a href="assets/img/g3.jpg"><img src="assets/img/g3.jpg" alt="Guest embracing a white horse" loading="lazy"></a>
+          <a href="assets/img/g4.jpg"><img src="assets/img/g4.jpg" alt="Children on a pony" loading="lazy"></a>
+          <a href="assets/img/g6.jpg"><img src="assets/img/g6.jpg" alt="White horse in an open field" loading="lazy"></a>
+          <a href="assets/img/g2.jpg"><img src="assets/img/g2.jpg" alt="A warm moment with a horse" loading="lazy"></a>
+          <a href="assets/img/g5.jpg"><img src="assets/img/g5.jpg" alt="Pony in a festive hat" loading="lazy"></a>
+          <a href="assets/img/g9.jpg"><img src="assets/img/g9.jpg" alt="Child riding across a field under a big sky" loading="lazy"></a>
+          <a href="assets/img/g7.jpg"><img src="assets/img/g7.jpg" alt="Family with a horse" loading="lazy"></a>
+          <a href="assets/img/g11.jpg"><img src="assets/img/g11.jpg" alt="Young rider on a white horse" loading="lazy"></a>
+          <a href="assets/img/g12.jpg"><img src="assets/img/g12.jpg" alt="Horse among wildflowers" loading="lazy"></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISITING -->
+    <section id="visiting" class="visit-band">
+      <div class="wrap">
+        <div class="visit__grid">
+          <div class="reveal">
+            <p class="eyebrow" data-en="Good to know" data-ru="Полезно знать">Good to know</p>
+            <h2 data-en="Before you visit." data-ru="Перед визитом.">Before you visit.</h2>
+            <div class="visit__here" style="margin-top:36px;">
+              <h3 data-en="Easy to reach." data-ru="Легко добраться.">Easy to reach.</h3>
+              <p data-en="We're at 19, 28 Iunie Street, in Svetlîi village, Comrat District. The Chișinău–Giurgiulești highway runs right through the village, so buses pass by often. From the highway it's just a short 10-minute walk — and you're here with us." data-ru="Мы находимся по адресу ул. 28 Iunie 19, село Светлый, Комратский район. Через село проходит трасса Кишинёв–Джюрджюлешты, поэтому автобусы ходят часто. От трассы всего 10 минут пешком — и вы у нас.">We're at 19, 28 Iunie Street, in Svetlîi village, Comrat District. The Chișinău–Giurgiulești highway runs right through the village, so buses pass by often. From the highway it's just a short 10-minute walk — and you're here with us.</p>
+              <a class="btn btn--ondark" href="https://www.google.com/maps/search/?api=1&query=28%20Iunie%20Street%20Svetlii%20Comrat%20Moldova" target="_blank" rel="noopener">
+                <span data-en="View on map" data-ru="Открыть карту">View on map</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </a>
+            </div>
+          </div>
+          <ul class="visit__list reveal">
+            <li><span class="n">01</span><span class="t" data-en="Visits are by appointment only, on weekends and holidays." data-ru="Посещение только по записи, в выходные и праздники.">Visits are by appointment only, on weekends and holidays.</span></li>
+            <li><span class="n">02</span><span class="t" data-en="Riders from 10 years old, with any previous experience." data-ru="Наездники от 10 лет, с любым опытом.">Riders from 10 years old, with any previous experience.</span></li>
+            <li><span class="n">03</span><span class="t" data-en="Weight limit for riding is up to 95 kg." data-ru="Ограничение по весу для езды — до 95 кг.">Weight limit for riding is up to 95 kg.</span></li>
+            <li><span class="n">04</span><span class="t" data-en="Wear comfortable clothes and closed shoes." data-ru="Наденьте удобную одежду и закрытую обувь.">Wear comfortable clothes and closed shoes.</span></li>
+            <li><span class="n">05</span><span class="t" data-en="Children are always accompanied and supervised." data-ru="Дети всегда под присмотром сопровождающих.">Children are always accompanied and supervised.</span></li>
+            <li><span class="n">06</span><span class="t" data-en="We can guide your visit in Russian, English or Ukrainian." data-ru="Проведём занятие на русском, английском или украинском.">We can guide your visit in Russian, English or Ukrainian.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="contact__mark" aria-hidden="true">
+        <svg viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="23" cy="23" r="9" fill="#E0A11E"/><g stroke="#E0A11E" stroke-width="2.4" stroke-linecap="round"><line x1="23" y1="3" x2="23" y2="9"/><line x1="23" y1="37" x2="23" y2="43"/><line x1="3" y1="23" x2="9" y2="23"/><line x1="37" y1="23" x2="43" y2="23"/><line x1="9" y1="9" x2="13" y2="13"/><line x1="33" y1="33" x2="37" y2="37"/><line x1="37" y1="9" x2="33" y2="13"/><line x1="13" y1="33" x2="9" y2="37"/></g></svg>
+      </div>
+      <div class="wrap">
+        <p class="eyebrow" data-en="Contact" data-ru="Контакты">Contact</p>
+        <h2 data-en="Come and meet the horses." data-ru="Приходите к лошадям.">Come and meet the horses.</h2>
+        <div class="contact__grid">
+          <div>
+            <div class="c-block">
+              <div class="c-k" data-en="Booking" data-ru="Запись">Booking</div>
+              <a class="c-phone" href="tel:+37368309793">+373 68 309 793</a>
+              <p class="c-sub" data-en="Telegram, phone or a message — whatever suits you best." data-ru="Telegram, звонок или сообщение — как вам удобнее.">Telegram, phone or a message — whatever suits you best.</p>
+              <div class="contact__cta">
+                <a class="btn btn--primary" href="https://t.me/horses_moldova" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.8 16.6 9.6 20c.4 0 .6-.2.8-.4l1.9-1.8 3.9 2.9c.7.4 1.2.2 1.4-.7l2.6-12.1c.3-1.1-.4-1.6-1.1-1.3L3.4 9.9c-1.1.4-1 .9-.2 1.2l4.3 1.3L18 6.1c.5-.3.9-.1.6.2z"/></svg>
+                  <span data-en="Message on Telegram" data-ru="Написать в Telegram">Message on Telegram</span>
+                </a>
+                <a class="btn btn--ghost" style="color:#F4EEDD;border-color:rgba(255,255,255,.25);" href="tel:+37368309793">
+                  <span data-en="Call" data-ru="Позвонить">Call</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="c-block">
+              <div class="c-k" data-en="Hours" data-ru="Часы">Hours</div>
+              <p data-en="Weekends & holidays, by appointment." data-ru="Выходные и праздники, по записи.">Weekends &amp; holidays, by appointment.</p>
+            </div>
+            <div class="c-block">
+              <div class="c-k" data-en="Location" data-ru="Локация">Location</div>
+              <p data-en="19, 28 Iunie Street, Svetlîi village, Comrat District, Moldova" data-ru="ул. 28 Iunie 19, село Светлый, Комратский район, Молдова">19, 28 Iunie Street, Svetlîi village, Comrat District, Moldova</p>
+            </div>
+            <div class="c-block" style="margin-bottom:0;">
+              <div class="c-k" data-en="Follow" data-ru="Мы в соцсетях">Follow</div>
+              <div class="socials">
+                <a href="https://www.instagram.com/horses.moldova" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .4 1.4.8.4.4.6.8.8 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.4 1-.8 1.4-.4.4-.8.6-1.4.8-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.4-1.4-.8-.4-.4-.6-.8-.8-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.4-1 .8-1.4.4-.4.8-.6 1.4-.8.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2m0 1.9c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1m0 3.3a4.6 4.6 0 1 0 0 9.2 4.6 4.6 0 0 0 0-9.2m0 7.6a3 3 0 1 1 0-6 3 3 0 0 1 0 6m5.8-7.8a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0"/></svg></a>
+                <a href="https://www.tiktok.com/@horses.moldova" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.8c-.9-.6-1.5-1.6-1.7-2.7 0-.2 0-.5 0-.7h-3v13.1c0 1.4-1.1 2.5-2.5 2.5S6.9 16.9 6.9 15.5s1.1-2.5 2.5-2.5c.3 0 .5 0 .8.1v-3.1c-.3 0-.5-.1-.8-.1-3 0-5.5 2.5-5.5 5.6s2.5 5.6 5.5 5.6 5.5-2.5 5.5-5.6V9.3c1.1.8 2.5 1.3 4 1.3v-3c-.9 0-1.7-.3-2.4-.7z"/></svg></a>
+                <a href="https://t.me/horses_moldova" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.8 16.6 9.6 20c.4 0 .6-.2.8-.4l1.9-1.8 3.9 2.9c.7.4 1.2.2 1.4-.7l2.6-12.1c.3-1.1-.4-1.6-1.1-1.3L3.4 9.9c-1.1.4-1 .9-.2 1.2l4.3 1.3L18 6.1c.5-.3.9-.1.6.2z"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact__foot">
+          <span>© 2026 „Solaris Riding Club” S.R.L. · Svetlîi, Moldova</span>
+          <span data-en="Built with care for horses and their people." data-ru="Сделано с заботой о лошадях и людях.">Built with care for horses and their people.</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox__close" aria-label="Close">&times;</button>
+  <button class="lightbox__nav prev" aria-label="Previous">&#8249;</button>
+  <img src="" alt="">
+  <button class="lightbox__nav next" aria-label="Next">&#8250;</button>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- Language ---------- */
+  var STORE = "solaris_lang";
+  function getLang(){ try { return localStorage.getItem(STORE) || "en"; } catch(e){ return "en"; } }
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-en]").forEach(function(el){
+      var val = el.getAttribute("data-" + lang);
+      if(val != null) el.innerHTML = val;
+    });
+    document.querySelectorAll(".lang button").forEach(function(b){
+      b.classList.toggle("on", b.getAttribute("data-lang") === lang);
+    });
+    try { localStorage.setItem(STORE, lang); } catch(e){}
+  }
+  document.querySelectorAll(".lang button").forEach(function(b){
+    b.addEventListener("click", function(){ setLang(b.getAttribute("data-lang")); });
+  });
+  setLang(getLang());
+
+  /* ---------- Mobile nav ---------- */
+  var burger = document.querySelector(".burger");
+  burger.addEventListener("click", function(){
+    var open = document.body.classList.toggle("nav-open");
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  document.querySelectorAll(".mobile-nav a").forEach(function(a){
+    a.addEventListener("click", function(){ document.body.classList.remove("nav-open"); burger.setAttribute("aria-expanded","false"); });
+  });
+
+  /* ---------- Active nav on scroll ---------- */
+  var sections = document.querySelectorAll("section[id]");
+  var navLinks = document.querySelectorAll(".nav a");
+  var spy = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        navLinks.forEach(function(l){
+          l.classList.toggle("active", l.getAttribute("href") === "#" + e.target.id);
+        });
+      }
+    });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  sections.forEach(function(s){ spy.observe(s); });
+
+  /* ---------- Reveal ---------- */
+  var revealOK = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(revealOK){
+    var ro = new IntersectionObserver(function(entries, obs){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach(function(el){ ro.observe(el); });
+  } else {
+    document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); });
+  }
+
+  /* ---------- Lightbox ---------- */
+  var lb = document.getElementById("lightbox");
+  var lbImg = lb.querySelector("img");
+  var links = Array.prototype.slice.call(document.querySelectorAll("#gallery-grid a"));
+  var idx = 0;
+  function open(i){ idx = (i + links.length) % links.length; lbImg.src = links[idx].getAttribute("href"); lbImg.alt = links[idx].querySelector("img").alt; lb.classList.add("on"); lb.setAttribute("aria-hidden","false"); }
+  function close(){ lb.classList.remove("on"); lb.setAttribute("aria-hidden","true"); lbImg.src=""; }
+  links.forEach(function(a, i){ a.addEventListener("click", function(ev){ ev.preventDefault(); open(i); }); });
+  lb.querySelector(".lightbox__close").addEventListener("click", close);
+  lb.querySelector(".prev").addEventListener("click", function(){ open(idx-1); });
+  lb.querySelector(".next").addEventListener("click", function(){ open(idx+1); });
+  lb.addEventListener("click", function(ev){ if(ev.target === lb) close(); });
+  document.addEventListener("keydown", function(ev){
+    if(!lb.classList.contains("on")) return;
+    if(ev.key === "Escape") close();
+    if(ev.key === "ArrowLeft") open(idx-1);
+    if(ev.key === "ArrowRight") open(idx+1);
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# Claude Code session/tooling data
+.claude/
+
+# OS files
+Thumbs.db
+.DS_Store
