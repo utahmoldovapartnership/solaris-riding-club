@@ -23,7 +23,7 @@
       "ru": "Спокойный семейный конный клуб рядом с Комратом. Уроки, катание на пони и фотосессии для детей и взрослых — без соревнований, просто время рядом с этими добрыми и сильными животными."
     },
     "seePricesLabel": { "en": "See prices", "ru": "Смотреть цены" },
-    "image": "assets/img/hero.jpg",
+    "image": "/assets/img/hero.jpg",
     "imageAlt": "A rider reaching up to greet a horse in golden evening light"
   },
   "strip": {
@@ -39,7 +39,7 @@
   "about": {
     "eyebrow": { "en": "Our story", "ru": "Наша история" },
     "heading": { "en": "Welcome to Solaris.", "ru": "Добро пожаловать в Solaris." },
-    "image": "assets/img/owner.jpg",
+    "image": "/assets/img/owner.jpg",
     "imageAlt": "The founder of Solaris Riding Club standing with one of the horses",
     "paragraphs": [
       {
@@ -67,19 +67,19 @@
       {
         "name": "Francesca",
         "role": { "en": "Mare · the one who started it all", "ru": "Кобыла · с неё всё началось" },
-        "image": "assets/img/horse-francesca.jpg",
+        "image": "/assets/img/horse-francesca.jpg",
         "imageAlt": "Francesca the horse"
       },
       {
         "name": "Malysh",
         "role": { "en": "Pony · “Little One”", "ru": "Пони · «Малыш»" },
-        "image": "assets/img/horse-malysh.jpg",
+        "image": "/assets/img/horse-malysh.jpg",
         "imageAlt": "Malysh the pony"
       },
       {
         "name": "Dobry",
         "role": { "en": "Orlov Trotter · “Kind One”", "ru": "Орловский рысак · «Добрый»" },
-        "image": "assets/img/horse-dobry.jpg",
+        "image": "/assets/img/horse-dobry.jpg",
         "imageAlt": "Dobry the Orlov Trotter"
       }
     ],
@@ -102,7 +102,7 @@
           "en": "Guided rides in the saddle, always supervised and matched to each rider's age and comfort.",
           "ru": "Уроки в седле — всегда под присмотром и с учётом возраста и уверенности каждого наездника."
         },
-        "image": "assets/img/exp-riding.jpg",
+        "image": "/assets/img/exp-riding.jpg",
         "imageAlt": "A rider on horseback in an open field",
         "focusTop": true
       },
@@ -112,7 +112,7 @@
           "en": "A gentle introduction for younger and first-time riders, led at a calm, easy pace.",
           "ru": "Мягкое знакомство для младших и начинающих — в спокойном, лёгком темпе."
         },
-        "image": "assets/img/exp-pony.jpg",
+        "image": "/assets/img/exp-pony.jpg",
         "imageAlt": "A child riding a pony across the field",
         "focusTop": false
       },
@@ -122,7 +122,7 @@
           "en": "Thirty minutes or more with a horse or pony, and warm keepsake photos to take home.",
           "ru": "Полчаса и больше рядом с лошадью или пони — и тёплые фотографии на память."
         },
-        "image": "assets/img/exp-photo.jpg",
+        "image": "/assets/img/exp-photo.jpg",
         "imageAlt": "A guest hugging a horse during a photo session",
         "focusTop": false
       },
@@ -132,7 +132,7 @@
           "en": "Ride out into the countryside and open fields around the village, at your own pace.",
           "ru": "Выезд в поля и окрестности села — в своём собственном ритме."
         },
-        "image": "assets/img/exp-trip.jpg",
+        "image": "/assets/img/exp-trip.jpg",
         "imageAlt": "Children out with a horse in the meadow",
         "focusTop": true
       }
@@ -178,17 +178,17 @@
     "eyebrow": { "en": "Gallery", "ru": "Галерея" },
     "heading": { "en": "Moments from the club.", "ru": "Моменты из клуба." },
     "images": [
-      { "image": "assets/img/g1.jpg", "alt": "Rider with horses in golden light" },
-      { "image": "assets/img/g8.jpg", "alt": "Grey horse portrait" },
-      { "image": "assets/img/g3.jpg", "alt": "Guest embracing a white horse" },
-      { "image": "assets/img/g4.jpg", "alt": "Children on a pony" },
-      { "image": "assets/img/g6.jpg", "alt": "White horse in an open field" },
-      { "image": "assets/img/g2.jpg", "alt": "A warm moment with a horse" },
-      { "image": "assets/img/g5.jpg", "alt": "Pony in a festive hat" },
-      { "image": "assets/img/g9.jpg", "alt": "Child riding across a field under a big sky" },
-      { "image": "assets/img/g7.jpg", "alt": "Family with a horse" },
-      { "image": "assets/img/g11.jpg", "alt": "Young rider on a white horse" },
-      { "image": "assets/img/g12.jpg", "alt": "Horse among wildflowers" }
+      { "image": "/assets/img/g1.jpg", "alt": "Rider with horses in golden light" },
+      { "image": "/assets/img/g8.jpg", "alt": "Grey horse portrait" },
+      { "image": "/assets/img/g3.jpg", "alt": "Guest embracing a white horse" },
+      { "image": "/assets/img/g4.jpg", "alt": "Children on a pony" },
+      { "image": "/assets/img/g6.jpg", "alt": "White horse in an open field" },
+      { "image": "/assets/img/g2.jpg", "alt": "A warm moment with a horse" },
+      { "image": "/assets/img/g5.jpg", "alt": "Pony in a festive hat" },
+      { "image": "/assets/img/g9.jpg", "alt": "Child riding across a field under a big sky" },
+      { "image": "/assets/img/g7.jpg", "alt": "Family with a horse" },
+      { "image": "/assets/img/g11.jpg", "alt": "Young rider on a white horse" },
+      { "image": "/assets/img/g12.jpg", "alt": "Horse among wildflowers" }
     ]
   },
   "visiting": {
