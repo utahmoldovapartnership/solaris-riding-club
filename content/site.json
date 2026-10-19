@@ -5,40 +5,82 @@
   },
   "brand": {
     "tagline": {
-      "en": "Where strength and health unite.",
+      "en": "Hello",
       "ru": "Где сила и здоровье едины."
     }
   },
   "booking": {
     "telegramUrl": "https://t.me/horses_moldova",
     "phone": "+373 68 309 793",
-    "bookLabel": { "en": "Book on Telegram", "ru": "Записаться в Telegram" }
+    "bookLabel": {
+      "en": "Book on Telegram",
+      "ru": "Записаться в Telegram"
+    }
   },
   "hero": {
-    "eyebrow": { "en": "Horse Riding Club · Moldova", "ru": "Конный клуб · Молдова" },
-    "titleLead": { "en": "A day among horses, sun and", "ru": "День среди лошадей, солнца и" },
-    "titleAccent": { "en": "open fields.", "ru": "простора." },
+    "eyebrow": {
+      "en": "Horse Riding Club · Moldova",
+      "ru": "Конный клуб · Молдова"
+    },
+    "titleLead": {
+      "en": "A day among horses, sun and",
+      "ru": "День среди лошадей, солнца и"
+    },
+    "titleAccent": {
+      "en": "open fields.",
+      "ru": "простора."
+    },
     "subtitle": {
       "en": "A relaxed, family-run riding club near Comrat. Lessons, pony rides and photo sessions for children and adults — no competition, just time with these gentle, powerful animals.",
       "ru": "Спокойный семейный конный клуб рядом с Комратом. Уроки, катание на пони и фотосессии для детей и взрослых — без соревнований, просто время рядом с этими добрыми и сильными животными."
     },
-    "seePricesLabel": { "en": "See prices", "ru": "Смотреть цены" },
+    "seePricesLabel": {
+      "en": "See prices",
+      "ru": "Смотреть цены"
+    },
     "image": "/assets/img/hero.jpg",
     "imageAlt": "A rider reaching up to greet a horse in golden evening light"
   },
   "strip": {
-    "visitsLabel": { "en": "Visits", "ru": "Посещение" },
-    "visitsValue": { "en": "By appointment", "ru": "По записи" },
-    "openLabel": { "en": "Open", "ru": "Открыто" },
-    "openValue": { "en": "Weekends & holidays", "ru": "Выходные и праздники" },
-    "locationLabel": { "en": "Location", "ru": "Локация" },
-    "locationValue": { "en": "Svetlîi, Comrat", "ru": "Светлый, Комрат" },
-    "languagesLabel": { "en": "Languages", "ru": "Языки" },
+    "visitsLabel": {
+      "en": "Visits",
+      "ru": "Посещение"
+    },
+    "visitsValue": {
+      "en": "By appointment",
+      "ru": "По записи"
+    },
+    "openLabel": {
+      "en": "Open",
+      "ru": "Открыто"
+    },
+    "openValue": {
+      "en": "Weekends & holidays",
+      "ru": "Выходные и праздники"
+    },
+    "locationLabel": {
+      "en": "Location",
+      "ru": "Локация"
+    },
+    "locationValue": {
+      "en": "Svetlîi, Comrat",
+      "ru": "Светлый, Комрат"
+    },
+    "languagesLabel": {
+      "en": "Languages",
+      "ru": "Языки"
+    },
     "languagesValue": "RU · EN · UK"
   },
   "about": {
-    "eyebrow": { "en": "Our story", "ru": "Наша история" },
-    "heading": { "en": "Welcome to Solaris.", "ru": "Добро пожаловать в Solaris." },
+    "eyebrow": {
+      "en": "Our story",
+      "ru": "Наша история"
+    },
+    "heading": {
+      "en": "Welcome to Solaris.",
+      "ru": "Добро пожаловать в Solaris."
+    },
     "image": "/assets/img/owner.jpg",
     "imageAlt": "The founder of Solaris Riding Club standing with one of the horses",
     "paragraphs": [
@@ -61,24 +103,39 @@
     }
   },
   "herd": {
-    "eyebrow": { "en": "Meet the family", "ru": "Знакомьтесь" },
-    "heading": { "en": "The herd you'll spend the day with.", "ru": "Табун, с которым вы проведёте день." },
+    "eyebrow": {
+      "en": "Meet the family",
+      "ru": "Знакомьтесь"
+    },
+    "heading": {
+      "en": "The herd you'll spend the day with.",
+      "ru": "Табун, с которым вы проведёте день."
+    },
     "members": [
       {
         "name": "Francesca",
-        "role": { "en": "Mare · the one who started it all", "ru": "Кобыла · с неё всё началось" },
+        "role": {
+          "en": "Mare · the one who started it all",
+          "ru": "Кобыла · с неё всё началось"
+        },
         "image": "/assets/img/horse-francesca.jpg",
         "imageAlt": "Francesca the horse"
       },
       {
         "name": "Malysh",
-        "role": { "en": "Pony · “Little One”", "ru": "Пони · «Малыш»" },
+        "role": {
+          "en": "Pony · “Little One”",
+          "ru": "Пони · «Малыш»"
+        },
         "image": "/assets/img/horse-malysh.jpg",
         "imageAlt": "Malysh the pony"
       },
       {
         "name": "Dobry",
-        "role": { "en": "Orlov Trotter · “Kind One”", "ru": "Орловский рысак · «Добрый»" },
+        "role": {
+          "en": "Orlov Trotter · “Kind One”",
+          "ru": "Орловский рысак · «Добрый»"
+        },
         "image": "/assets/img/horse-dobry.jpg",
         "imageAlt": "Dobry the Orlov Trotter"
       }
@@ -89,15 +146,24 @@
     }
   },
   "experiences": {
-    "eyebrow": { "en": "Experiences", "ru": "Занятия" },
-    "heading": { "en": "Ways to spend time with the horses.", "ru": "Как провести время с лошадьми." },
+    "eyebrow": {
+      "en": "Experiences",
+      "ru": "Занятия"
+    },
+    "heading": {
+      "en": "Ways to spend time with the horses.",
+      "ru": "Как провести время с лошадьми."
+    },
     "intro": {
       "en": "Everything is calm, supervised and matched to you — whether it's your first time in the saddle or you've ridden for years.",
       "ru": "Всё спокойно, под присмотром и по вашему уровню — впервые в седле или уже с опытом."
     },
     "items": [
       {
-        "title": { "en": "Horseback riding", "ru": "Верховая езда" },
+        "title": {
+          "en": "Horseback riding",
+          "ru": "Верховая езда"
+        },
         "text": {
           "en": "Guided rides in the saddle, always supervised and matched to each rider's age and comfort.",
           "ru": "Уроки в седле — всегда под присмотром и с учётом возраста и уверенности каждого наездника."
@@ -107,7 +173,10 @@
         "focusTop": true
       },
       {
-        "title": { "en": "Pony rides", "ru": "Катание на пони" },
+        "title": {
+          "en": "Pony rides",
+          "ru": "Катание на пони"
+        },
         "text": {
           "en": "A gentle introduction for younger and first-time riders, led at a calm, easy pace.",
           "ru": "Мягкое знакомство для младших и начинающих — в спокойном, лёгком темпе."
@@ -117,7 +186,10 @@
         "focusTop": false
       },
       {
-        "title": { "en": "Photo sessions", "ru": "Фотосессии" },
+        "title": {
+          "en": "Photo sessions",
+          "ru": "Фотосессии"
+        },
         "text": {
           "en": "Thirty minutes or more with a horse or pony, and warm keepsake photos to take home.",
           "ru": "Полчаса и больше рядом с лошадью или пони — и тёплые фотографии на память."
@@ -127,7 +199,10 @@
         "focusTop": false
       },
       {
-        "title": { "en": "Field trips", "ru": "Прогулки" },
+        "title": {
+          "en": "Field trips",
+          "ru": "Прогулки"
+        },
         "text": {
           "en": "Ride out into the countryside and open fields around the village, at your own pace.",
           "ru": "Выезд в поля и окрестности села — в своём собственном ритме."
@@ -139,33 +214,72 @@
     ]
   },
   "prices": {
-    "eyebrow": { "en": "Prices", "ru": "Цены" },
-    "heading": { "en": "Fair prices, warm welcome.", "ru": "Честные цены и тёплый приём." },
-    "unit": { "en": "lei", "ru": "лей" },
+    "eyebrow": {
+      "en": "Prices",
+      "ru": "Цены"
+    },
+    "heading": {
+      "en": "Fair prices, warm welcome.",
+      "ru": "Честные цены и тёплый приём."
+    },
+    "unit": {
+      "en": "lei",
+      "ru": "лей"
+    },
     "rows": [
       {
-        "name": { "en": "Pony lesson or photo session", "ru": "Урок или фотосессия на пони" },
-        "meta": { "en": "30+ minutes", "ru": "30+ минут" },
+        "name": {
+          "en": "Pony lesson or photo session",
+          "ru": "Урок или фотосессия на пони"
+        },
+        "meta": {
+          "en": "30+ minutes",
+          "ru": "30+ минут"
+        },
         "amount": "400"
       },
       {
-        "name": { "en": "Horse lesson or photo session", "ru": "Урок или фотосессия на лошади" },
-        "meta": { "en": "30+ minutes", "ru": "30+ минут" },
+        "name": {
+          "en": "Horse lesson or photo session",
+          "ru": "Урок или фотосессия на лошади"
+        },
+        "meta": {
+          "en": "30+ minutes",
+          "ru": "30+ минут"
+        },
         "amount": "500"
       },
       {
-        "name": { "en": "10-lesson package · pony", "ru": "Абонемент 10 занятий · пони" },
-        "meta": { "en": "Best value for regular riders", "ru": "Выгодно для постоянных занятий" },
+        "name": {
+          "en": "10-lesson package · pony",
+          "ru": "Абонемент 10 занятий · пони"
+        },
+        "meta": {
+          "en": "Best value for regular riders",
+          "ru": "Выгодно для постоянных занятий"
+        },
         "amount": "3 000"
       },
       {
-        "name": { "en": "10-lesson package · horse", "ru": "Абонемент 10 занятий · лошадь" },
-        "meta": { "en": "Best value for regular riders", "ru": "Выгодно для постоянных занятий" },
+        "name": {
+          "en": "10-lesson package · horse",
+          "ru": "Абонемент 10 занятий · лошадь"
+        },
+        "meta": {
+          "en": "Best value for regular riders",
+          "ru": "Выгодно для постоянных занятий"
+        },
         "amount": "4 000"
       },
       {
-        "name": { "en": "Field trip", "ru": "Выездная прогулка" },
-        "meta": { "en": "Per trip, depending on route", "ru": "За поездку, в зависимости от маршрута" },
+        "name": {
+          "en": "Field trip",
+          "ru": "Выездная прогулка"
+        },
+        "meta": {
+          "en": "Per trip, depending on route",
+          "ru": "За поездку, в зависимости от маршрута"
+        },
         "amount": "1 000–2 000"
       }
     ],
@@ -175,61 +289,157 @@
     }
   },
   "gallery": {
-    "eyebrow": { "en": "Gallery", "ru": "Галерея" },
-    "heading": { "en": "Moments from the club.", "ru": "Моменты из клуба." },
+    "eyebrow": {
+      "en": "Gallery",
+      "ru": "Галерея"
+    },
+    "heading": {
+      "en": "Moments from the club.",
+      "ru": "Моменты из клуба."
+    },
     "images": [
-      { "image": "/assets/img/g1.jpg", "alt": "Rider with horses in golden light" },
-      { "image": "/assets/img/g8.jpg", "alt": "Grey horse portrait" },
-      { "image": "/assets/img/g3.jpg", "alt": "Guest embracing a white horse" },
-      { "image": "/assets/img/g4.jpg", "alt": "Children on a pony" },
-      { "image": "/assets/img/g6.jpg", "alt": "White horse in an open field" },
-      { "image": "/assets/img/g2.jpg", "alt": "A warm moment with a horse" },
-      { "image": "/assets/img/g5.jpg", "alt": "Pony in a festive hat" },
-      { "image": "/assets/img/g9.jpg", "alt": "Child riding across a field under a big sky" },
-      { "image": "/assets/img/g7.jpg", "alt": "Family with a horse" },
-      { "image": "/assets/img/g11.jpg", "alt": "Young rider on a white horse" },
-      { "image": "/assets/img/g12.jpg", "alt": "Horse among wildflowers" }
+      {
+        "image": "/assets/img/g1.jpg",
+        "alt": "Rider with horses in golden light"
+      },
+      {
+        "image": "/assets/img/g8.jpg",
+        "alt": "Grey horse portrait"
+      },
+      {
+        "image": "/assets/img/g3.jpg",
+        "alt": "Guest embracing a white horse"
+      },
+      {
+        "image": "/assets/img/g4.jpg",
+        "alt": "Children on a pony"
+      },
+      {
+        "image": "/assets/img/g6.jpg",
+        "alt": "White horse in an open field"
+      },
+      {
+        "image": "/assets/img/g2.jpg",
+        "alt": "A warm moment with a horse"
+      },
+      {
+        "image": "/assets/img/g5.jpg",
+        "alt": "Pony in a festive hat"
+      },
+      {
+        "image": "/assets/img/g9.jpg",
+        "alt": "Child riding across a field under a big sky"
+      },
+      {
+        "image": "/assets/img/g7.jpg",
+        "alt": "Family with a horse"
+      },
+      {
+        "image": "/assets/img/g11.jpg",
+        "alt": "Young rider on a white horse"
+      },
+      {
+        "image": "/assets/img/g12.jpg",
+        "alt": "Horse among wildflowers"
+      }
     ]
   },
   "visiting": {
-    "eyebrow": { "en": "Good to know", "ru": "Полезно знать" },
-    "heading": { "en": "Before you visit.", "ru": "Перед визитом." },
-    "hereHeading": { "en": "Easy to reach.", "ru": "Легко добраться." },
+    "eyebrow": {
+      "en": "Good to know",
+      "ru": "Полезно знать"
+    },
+    "heading": {
+      "en": "Before you visit.",
+      "ru": "Перед визитом."
+    },
+    "hereHeading": {
+      "en": "Easy to reach.",
+      "ru": "Легко добраться."
+    },
     "hereText": {
       "en": "We're at 19, 28 Iunie Street, in Svetlîi village, Comrat District. The Chișinău–Giurgiulești highway runs right through the village, so buses pass by often. From the highway it's just a short 10-minute walk — and you're here with us.",
       "ru": "Мы находимся по адресу ул. 28 Iunie 19, село Светлый, Комратский район. Через село проходит трасса Кишинёв–Джюрджюлешты, поэтому автобусы ходят часто. От трассы всего 10 минут пешком — и вы у нас."
     },
-    "mapButtonLabel": { "en": "View on map", "ru": "Открыть карту" },
+    "mapButtonLabel": {
+      "en": "View on map",
+      "ru": "Открыть карту"
+    },
     "mapLink": "https://maps.app.goo.gl/Vu7zUF4SCSLZu1xF9",
     "mapEmbedEn": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2770.4697890257335!2d28.571996100000003!3d46.021774199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b6379852347c05%3A0xf3a61dd759e8c2fd!2sSolaris%20Riding%20Club!5e0!3m2!1sen!2s!4v1790582344250!5m2!1sen!2s",
     "mapEmbedRu": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2770.4697890257335!2d28.571996100000003!3d46.021774199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b6379852347c05%3A0xf3a61dd759e8c2fd!2sSolaris%20Riding%20Club!5e0!3m2!1sru!2s!4v1790582344250!5m2!1sru!2s",
     "rules": [
-      { "en": "Visits are by appointment only, on weekends and holidays.", "ru": "Посещение только по записи, в выходные и праздники." },
-      { "en": "Riders from 10 years old, with any previous experience.", "ru": "Наездники от 10 лет, с любым опытом." },
-      { "en": "Weight limit for riding is up to 95 kg.", "ru": "Ограничение по весу для езды — до 95 кг." },
-      { "en": "Wear comfortable clothes and closed shoes.", "ru": "Наденьте удобную одежду и закрытую обувь." },
-      { "en": "Children are always accompanied and supervised.", "ru": "Дети всегда под присмотром сопровождающих." },
-      { "en": "We can guide your visit in Russian, English or Ukrainian.", "ru": "Проведём занятие на русском, английском или украинском." }
+      {
+        "en": "Visits are by appointment only, on weekends and holidays.",
+        "ru": "Посещение только по записи, в выходные и праздники."
+      },
+      {
+        "en": "Riders from 10 years old, with any previous experience.",
+        "ru": "Наездники от 10 лет, с любым опытом."
+      },
+      {
+        "en": "Weight limit for riding is up to 95 kg.",
+        "ru": "Ограничение по весу для езды — до 95 кг."
+      },
+      {
+        "en": "Wear comfortable clothes and closed shoes.",
+        "ru": "Наденьте удобную одежду и закрытую обувь."
+      },
+      {
+        "en": "Children are always accompanied and supervised.",
+        "ru": "Дети всегда под присмотром сопровождающих."
+      },
+      {
+        "en": "We can guide your visit in Russian, English or Ukrainian.",
+        "ru": "Проведём занятие на русском, английском или украинском."
+      }
     ]
   },
   "contact": {
-    "eyebrow": { "en": "Contact", "ru": "Контакты" },
-    "heading": { "en": "Come and meet the horses.", "ru": "Приходите к лошадям." },
-    "bookingLabel": { "en": "Booking", "ru": "Запись" },
+    "eyebrow": {
+      "en": "Contact",
+      "ru": "Контакты"
+    },
+    "heading": {
+      "en": "Come and meet the horses.",
+      "ru": "Приходите к лошадям."
+    },
+    "bookingLabel": {
+      "en": "Booking",
+      "ru": "Запись"
+    },
     "bookingSub": {
       "en": "Telegram, phone or a message — whatever suits you best.",
       "ru": "Telegram, звонок или сообщение — как вам удобнее."
     },
-    "messageLabel": { "en": "Message on Telegram", "ru": "Написать в Telegram" },
-    "callLabel": { "en": "Call", "ru": "Позвонить" },
-    "hoursLabel": { "en": "Hours", "ru": "Часы" },
-    "hoursText": { "en": "Weekends & holidays, by appointment.", "ru": "Выходные и праздники, по записи." },
-    "locationLabel": { "en": "Location", "ru": "Локация" },
+    "messageLabel": {
+      "en": "Message on Telegram",
+      "ru": "Написать в Telegram"
+    },
+    "callLabel": {
+      "en": "Call",
+      "ru": "Позвонить"
+    },
+    "hoursLabel": {
+      "en": "Hours",
+      "ru": "Часы"
+    },
+    "hoursText": {
+      "en": "Weekends & holidays, by appointment.",
+      "ru": "Выходные и праздники, по записи."
+    },
+    "locationLabel": {
+      "en": "Location",
+      "ru": "Локация"
+    },
     "locationText": {
       "en": "19, 28 Iunie Street, Svetlîi village, Comrat District, Moldova",
       "ru": "ул. 28 Iunie 19, село Светлый, Комратский район, Молдова"
     },
-    "followLabel": { "en": "Follow", "ru": "Мы в соцсетях" },
+    "followLabel": {
+      "en": "Follow",
+      "ru": "Мы в соцсетях"
+    },
     "instagram": "https://www.instagram.com/horses.moldova",
     "tiktok": "https://www.tiktok.com/@horses.moldova",
     "telegram": "https://t.me/horses_moldova",
