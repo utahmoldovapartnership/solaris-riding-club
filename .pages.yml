@@ -80,7 +80,7 @@ content:
             fields:
               - { name: en, label: English, type: string }
               - { name: ru, label: Russian, type: string }
-          - { name: image, label: Hero photo, type: image }
+          - { name: image, label: "Hero photo — click to replace", type: image, description: "Click the image to upload a new photo or choose a different one." }
           - { name: imageAlt, label: Hero photo description (for accessibility), type: string }
 
       # ---------------- INFO STRIP ----------------
@@ -104,7 +104,7 @@ content:
         fields:
           - { name: eyebrow, label: Small label, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
           - { name: heading, label: Heading, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
-          - { name: image, label: Owner photo, type: image }
+          - { name: image, label: "Owner photo — click to replace", type: image, description: "Click the image to upload a new photo or choose a different one." }
           - { name: imageAlt, label: Owner photo description, type: string }
           - name: paragraphs
             label: Story paragraphs
@@ -129,7 +129,7 @@ content:
             fields:
               - { name: name, label: Name, type: string }
               - { name: role, label: Role / description, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
-              - { name: image, label: Photo, type: image }
+              - { name: image, label: "Photo — click to replace", type: image, description: "Click the image to upload a new photo or choose a different one." }
               - { name: imageAlt, label: Photo description, type: string }
           - { name: note, label: Note under the cards, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
 
@@ -148,7 +148,7 @@ content:
             fields:
               - { name: title, label: Title, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
               - { name: text, label: Description, type: object, fields: [ { name: en, label: English, type: text }, { name: ru, label: Russian, type: text } ] }
-              - { name: image, label: Photo, type: image }
+              - { name: image, label: "Photo — click to replace", type: image, description: "Click the image to upload a new photo or choose a different one." }
               - { name: imageAlt, label: Photo description, type: string }
               - { name: focusTop, label: "Focus photo on the top (keeps heads in frame)", type: boolean }
 
@@ -182,7 +182,7 @@ content:
             type: object
             list: true
             fields:
-              - { name: image, label: Photo, type: image }
+              - { name: image, label: "Photo — click to replace", type: image, description: "Click the image to upload a new photo or choose a different one." }
               - { name: alt, label: Photo description, type: string }
 
       # ---------------- VISITING ----------------
