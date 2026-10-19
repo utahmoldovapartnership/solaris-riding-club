@@ -15,7 +15,8 @@ content:
     fields:
       # ---------------- PAGE BASICS ----------------
       - name: meta
-        label: Page title & description (browser tab / Google)
+        label: "🌐 Your website — open it any time"
+        description: "View your live site here: https://solaris-riding-club.vercel.app/  —  changes you save appear there in about a minute. The two fields below set the browser-tab title and the Google search description."
         type: object
         fields:
           - { name: title, label: Browser tab title, type: string }

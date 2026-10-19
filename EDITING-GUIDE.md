@@ -1,5 +1,18 @@
 # Solaris Riding Club — editing & hosting guide
 
+**Live website:** https://solaris-riding-club.vercel.app/
+
+## One-tap access to the website (iPhone)
+Open **https://solaris-riding-club.vercel.app/** in Safari → tap the **Share** button
+→ **Add to Home Screen**. You now have an app-style icon that opens the landing page in
+a single tap. (On Android Chrome: menu ⋮ → **Add to Home screen**.)
+
+The live link is also shown at the very top of the Pages CMS editor, under
+**"🌐 Your website — open it any time."**
+
+---
+
+
 The website now has a friendly **edit view** so the client can change the copy,
 prices and images herself — no code. This document explains how it all fits
 together and the exact steps to turn it on.
