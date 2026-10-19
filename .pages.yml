@@ -1,0 +1,229 @@
+# Pages CMS configuration — https://pagescms.org
+# Defines the friendly edit forms the client sees for content/site.json.
+# Every text field has English (en) + Russian (ru) versions.
+
+media:
+  input: assets/img
+  output: assets/img
+  extensions: [jpg, jpeg, png, webp, svg]
+
+content:
+  - name: site
+    label: Website content
+    type: file
+    path: content/site.json
+    fields:
+      # ---------------- PAGE BASICS ----------------
+      - name: meta
+        label: Page title & description (browser tab / Google)
+        type: object
+        fields:
+          - { name: title, label: Browser tab title, type: string }
+          - { name: description, label: Search description, type: text }
+
+      - name: brand
+        label: Brand
+        type: object
+        fields:
+          - name: tagline
+            label: Tagline (under the name)
+            type: object
+            fields:
+              - { name: en, label: English, type: string }
+              - { name: ru, label: Russian, type: string }
+
+      - name: booking
+        label: Booking (Telegram & phone — used by every button)
+        type: object
+        fields:
+          - { name: telegramUrl, label: Telegram link, type: string, description: "e.g. https://t.me/horses_moldova" }
+          - { name: phone, label: Phone number, type: string, description: "e.g. +373 68 309 793" }
+          - name: bookLabel
+            label: "Button text: Book on Telegram"
+            type: object
+            fields:
+              - { name: en, label: English, type: string }
+              - { name: ru, label: Russian, type: string }
+
+      # ---------------- HERO ----------------
+      - name: hero
+        label: "Home / Hero (top of the page)"
+        type: object
+        fields:
+          - name: eyebrow
+            label: Small label above the title
+            type: object
+            fields:
+              - { name: en, label: English, type: string }
+              - { name: ru, label: Russian, type: string }
+          - name: titleLead
+            label: Big title — first part
+            type: object
+            fields:
+              - { name: en, label: English, type: string }
+              - { name: ru, label: Russian, type: string }
+          - name: titleAccent
+            label: Big title — highlighted end (gold)
+            type: object
+            fields:
+              - { name: en, label: English, type: string }
+              - { name: ru, label: Russian, type: string }
+          - name: subtitle
+            label: Intro paragraph
+            type: object
+            fields:
+              - { name: en, label: English, type: text }
+              - { name: ru, label: Russian, type: text }
+          - name: seePricesLabel
+            label: "Link text: See prices"
+            type: object
+            fields:
+              - { name: en, label: English, type: string }
+              - { name: ru, label: Russian, type: string }
+          - { name: image, label: Hero photo, type: image }
+          - { name: imageAlt, label: Hero photo description (for accessibility), type: string }
+
+      # ---------------- INFO STRIP ----------------
+      - name: strip
+        label: Info strip (dark bar under the hero)
+        type: object
+        fields:
+          - { name: visitsLabel, label: Visits label, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: visitsValue, label: Visits value, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: openLabel, label: Open label, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: openValue, label: Open value, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: locationLabel, label: Location label, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: locationValue, label: Location value, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: languagesLabel, label: Languages label, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: languagesValue, label: Languages value, type: string }
+
+      # ---------------- ABOUT ----------------
+      - name: about
+        label: About / Our story
+        type: object
+        fields:
+          - { name: eyebrow, label: Small label, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: heading, label: Heading, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: image, label: Owner photo, type: image }
+          - { name: imageAlt, label: Owner photo description, type: string }
+          - name: paragraphs
+            label: Story paragraphs
+            type: object
+            list: true
+            fields:
+              - { name: en, label: English, type: text }
+              - { name: ru, label: Russian, type: text }
+          - { name: quote, label: Highlighted quote, type: object, fields: [ { name: en, label: English, type: text }, { name: ru, label: Russian, type: text } ] }
+
+      # ---------------- HERD ----------------
+      - name: herd
+        label: The herd (horses)
+        type: object
+        fields:
+          - { name: eyebrow, label: Small label, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: heading, label: Heading, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - name: members
+            label: Horses
+            type: object
+            list: true
+            fields:
+              - { name: name, label: Name, type: string }
+              - { name: role, label: Role / description, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+              - { name: image, label: Photo, type: image }
+              - { name: imageAlt, label: Photo description, type: string }
+          - { name: note, label: Note under the cards, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+
+      # ---------------- EXPERIENCES ----------------
+      - name: experiences
+        label: Experiences
+        type: object
+        fields:
+          - { name: eyebrow, label: Small label, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: heading, label: Heading, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: intro, label: Intro line, type: object, fields: [ { name: en, label: English, type: text }, { name: ru, label: Russian, type: text } ] }
+          - name: items
+            label: Experience cards
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Title, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+              - { name: text, label: Description, type: object, fields: [ { name: en, label: English, type: text }, { name: ru, label: Russian, type: text } ] }
+              - { name: image, label: Photo, type: image }
+              - { name: imageAlt, label: Photo description, type: string }
+              - { name: focusTop, label: "Focus photo on the top (keeps heads in frame)", type: boolean }
+
+      # ---------------- PRICES ----------------
+      - name: prices
+        label: Prices
+        type: object
+        fields:
+          - { name: eyebrow, label: Small label, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: heading, label: Heading, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: unit, label: "Currency word (lei / лей)", type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - name: rows
+            label: Price rows
+            type: object
+            list: true
+            fields:
+              - { name: name, label: Service, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+              - { name: meta, label: Small note, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+              - { name: amount, label: "Price (number only, e.g. 400 or 1 000–2 000)", type: string }
+          - { name: note, label: Line under the prices, type: object, fields: [ { name: en, label: English, type: text }, { name: ru, label: Russian, type: text } ] }
+
+      # ---------------- GALLERY ----------------
+      - name: gallery
+        label: Gallery
+        type: object
+        fields:
+          - { name: eyebrow, label: Small label, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: heading, label: Heading, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - name: images
+            label: Gallery photos
+            type: object
+            list: true
+            fields:
+              - { name: image, label: Photo, type: image }
+              - { name: alt, label: Photo description, type: string }
+
+      # ---------------- VISITING ----------------
+      - name: visiting
+        label: Visiting / Getting here
+        type: object
+        fields:
+          - { name: eyebrow, label: Small label, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: heading, label: Heading, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: hereHeading, label: "'Easy to reach' heading", type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: hereText, label: Directions text, type: object, fields: [ { name: en, label: English, type: text }, { name: ru, label: Russian, type: text } ] }
+          - { name: mapButtonLabel, label: "Map button text", type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: mapLink, label: "Map button link (Google Maps short link)", type: string }
+          - { name: mapEmbedEn, label: "Embedded map URL — English (advanced)", type: string }
+          - { name: mapEmbedRu, label: "Embedded map URL — Russian (advanced)", type: string }
+          - name: rules
+            label: "'Good to know' list"
+            type: object
+            list: true
+            fields:
+              - { name: en, label: English, type: text }
+              - { name: ru, label: Russian, type: text }
+
+      # ---------------- CONTACT ----------------
+      - name: contact
+        label: Contact (bottom of the page)
+        type: object
+        fields:
+          - { name: eyebrow, label: Small label, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: heading, label: Heading, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: bookingLabel, label: Booking label, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: bookingSub, label: Booking sub-line, type: object, fields: [ { name: en, label: English, type: text }, { name: ru, label: Russian, type: text } ] }
+          - { name: messageLabel, label: "'Message on Telegram' button text", type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: callLabel, label: "'Call' button text", type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: hoursLabel, label: Hours label, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: hoursText, label: Hours text, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: locationLabel, label: Location label, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: locationText, label: Address, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: followLabel, label: Follow label, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
+          - { name: instagram, label: Instagram link, type: string }
+          - { name: tiktok, label: TikTok link, type: string }
+          - { name: telegram, label: Telegram link, type: string }
+          - { name: footerLeft, label: Footer copyright, type: string }
+          - { name: footerRight, label: Footer right text, type: object, fields: [ { name: en, label: English, type: string }, { name: ru, label: Russian, type: string } ] }
